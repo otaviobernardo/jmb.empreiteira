@@ -27,7 +27,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-heading text-lg font-bold mb-6">Links Rápidos</h4>
+            <h4 className="font-heading text-lg font-bold mb-6">Seções</h4>
             <nav className="space-y-3">
               {[
                 { href: "#inicio", label: "Início" },
@@ -63,7 +63,7 @@ const Footer = () => {
             <h4 className="font-heading text-lg font-bold mb-6">Contato</h4>
             <div className="space-y-4">
               <a
-                href="https://wa.me/5547997223316"
+                href="https://wa.me/5547997223316?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20os%20seus%20serviços."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-white/70 hover:text-whatsapp transition-colors"
