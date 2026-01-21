@@ -26,7 +26,7 @@ const CTA = () => {
             <Button
               variant="whatsapp"
               size="xl"
-              onClick={() => window.open("https://wa.me/SEU_NUMERO_AQUI", "_blank")}
+              onClick={() => window.open("https://wa.me/5547997223316", "_blank")}
               className="group bg-white text-primary hover:bg-white/90"
             >
               <Phone className="w-5 h-5" />
