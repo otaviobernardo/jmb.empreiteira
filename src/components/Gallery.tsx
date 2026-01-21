@@ -2,13 +2,25 @@ import { Play, Image as ImageIcon } from "lucide-react";
 
 const Gallery = () => {
   // Placeholder items - você pode substituir pelos seus próprios arquivos
+  // Você pode substituir os placeholders pelos seus arquivos
+  // Exemplo com imagem: { type: "image", src: "/sua-imagem.jpg", alt: "Descrição" }
+  // Exemplo com vídeo: { type: "video", src: "/seu-video.mp4" }
   const mediaItems = [
     { type: "image", placeholder: true },
     { type: "image", placeholder: true },
+    { type: "image", placeholder: true },
     { type: "video", placeholder: true },
     { type: "image", placeholder: true },
     { type: "image", placeholder: true },
+    { type: "image", placeholder: true },
     { type: "video", placeholder: true },
+    { type: "image", placeholder: true },
+    { type: "image", placeholder: true },
+    { type: "image", placeholder: true },
+    { type: "video", placeholder: true },
+    { type: "image", placeholder: true },
+    { type: "image", placeholder: true },
+    { type: "image", placeholder: true },
   ];
 
   return (
