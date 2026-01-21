@@ -45,7 +45,7 @@ const Hero = () => {
             <Button
               variant="whatsapp"
               size="xl"
-              onClick={() => window.open("https://wa.me/SEU_NUMERO_AQUI", "_blank")}
+              onClick={() => window.open("https://wa.me/5547997223316", "_blank")}
               className="group"
             >
               <Phone className="w-5 h-5" />
@@ -67,7 +67,7 @@ const Hero = () => {
           {/* Trust Indicators */}
           <div className="pt-12 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
             {[
-              { number: "+15", label: "Anos de Experiência" },
+              { number: "+35", label: "Anos de Experiência" },
               { number: "+200", label: "Projetos Executados" },
               { number: "100%", label: "Clientes Satisfeitos" },
               { number: "24h", label: "Suporte Técnico" },

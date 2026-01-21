@@ -49,7 +49,7 @@ const Header = () => {
             <Button
               variant="whatsapp"
               size="lg"
-              onClick={() => window.open("https://wa.me/SEU_NUMERO_AQUI", "_blank")}
+              onClick={() => window.open("https://wa.me/5547997223316", "_blank")}
             >
               <Phone className="w-4 h-4" />
               Fale Conosco
@@ -87,7 +87,7 @@ const Header = () => {
                 variant="whatsapp"
                 size="lg"
                 className="mt-2"
-                onClick={() => window.open("https://wa.me/SEU_NUMERO_AQUI", "_blank")}
+                onClick={() => window.open("https://wa.me/5547997223316", "_blank")}
               >
                 <Phone className="w-4 h-4" />
                 Fale Conosco

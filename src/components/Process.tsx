@@ -56,15 +56,15 @@ const Process = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((item, index) => (
-              <div key={item.step} className="relative group">
-                {/* Step Number */}
-                <div className="absolute -top-4 left-0 text-6xl font-heading font-bold text-primary/10 group-hover:text-primary/20 transition-colors">
-                  {item.step}
-                </div>
-
+              <div key={item.step} className="relative group pt-8">
                 {/* Icon Circle */}
                 <div className="relative z-10 w-16 h-16 bg-primary rounded-xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform">
                   <item.icon className="w-8 h-8 text-primary-foreground" />
+                </div>
+
+                {/* Step Number - Now positioned below icon */}
+                <div className="absolute top-0 left-0 text-5xl font-heading font-bold text-primary/20 group-hover:text-primary/30 transition-colors select-none pointer-events-none">
+                  {item.step}
                 </div>
 
                 {/* Content */}
