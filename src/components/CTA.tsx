@@ -18,7 +18,7 @@ const CTA = () => {
             Pronto para Iniciar seu Projeto?
           </h2>
           <p className="text-white/90 text-lg md:text-xl max-w-2xl mx-auto">
-            Entre em contato conosco e solicite um orçamento sem compromisso.
+            Entre em contato conosco e solicite um orçamento.
             Nossa equipe está pronta para atender suas necessidades em fundações
             industriais.
           </p>

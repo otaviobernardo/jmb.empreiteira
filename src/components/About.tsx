@@ -15,26 +15,30 @@ const About = () => {
     <section className="section-padding bg-background">
       <div className="container-section">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Image/Logo Side */}
+          
+          {/* Image / Logo Side */}
           <div className="relative">
-            <div className="relative bg-secondary/50 rounded-2xl p-12 flex items-center justify-center">
+            <div className="relative bg-secondary/50 rounded-2xl p-12 flex items-center justify-center overflow-hidden">
+              
               {/* Decorative Elements */}
               <div className="absolute -top-4 -left-4 w-24 h-24 bg-primary/10 rounded-xl" />
               <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-primary/5 rounded-xl" />
-              
+
               {/* Logo */}
               <img
                 src={logo}
                 alt="JMB Empreiteira"
                 className="relative z-10 w-full max-w-sm"
               />
-            </div>
 
-            {/* Experience Badge */}
-            <div className="absolute -bottom-6 -right-6 bg-primary text-primary-foreground rounded-xl p-6 shadow-industrial">
-              <div className="text-center">
-                <div className="font-heading text-4xl font-bold">+35</div>
-                <div className="text-sm opacity-90">Anos de Experiência</div>
+              {/* Experience Badge */}
+              <div className="absolute bottom-6 right-6 bg-primary text-primary-foreground rounded-xl px-6 py-4 shadow-industrial z-20">
+                <div className="text-center">
+                  <div className="font-heading text-3xl font-bold">+35</div>
+                  <div className="text-xs opacity-90 uppercase tracking-wide">
+                    Anos de Experiência
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -45,16 +49,18 @@ const About = () => {
               <span className="inline-block text-primary font-semibold uppercase tracking-wider text-sm mb-4">
                 Sobre Nós
               </span>
+
               <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-foreground mb-6">
                 Excelência em{" "}
                 <span className="text-primary">Engenharia Industrial</span>
               </h2>
+
               <p className="text-muted-foreground text-lg leading-relaxed">
                 A JMB Empreiteira é especializada na construção de bases para
-                máquinas de precisão e pisos industriais. Com anos de
-                experiência no mercado, oferecemos soluções completas de
-                engenharia para garantir a estabilidade, segurança e durabilidade
-                das suas instalações industriais.
+                máquinas de precisão e pisos industriais. Com mais de três
+                décadas de experiência no mercado, oferecemos soluções completas
+                de engenharia para garantir a estabilidade, segurança e
+                durabilidade das suas instalações industriais.
               </p>
             </div>
 
@@ -68,6 +74,7 @@ const About = () => {
               ))}
             </div>
           </div>
+
         </div>
       </div>
     </section>

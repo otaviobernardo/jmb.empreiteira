@@ -117,6 +117,12 @@ const Gallery = () => {
             <X className="w-8 h-8" />
           </button>
 
+          {/* Indicador */}
+        <div
+          className="absolute top-6 left-6 text-white text-sm font-medium bg-black/50 px-3 py-1 rounded-lg">
+          {currentIndex + 1} / {mediaItems.length}
+        </div>
+
           {/* Anterior */}
           <button
             className="absolute left-4 md:left-10 text-white hover:text-primary z-50"
