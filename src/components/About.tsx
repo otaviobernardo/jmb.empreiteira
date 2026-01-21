@@ -35,8 +35,8 @@ const About = () => {
               <div
                 className="
                   absolute 
-                  bottom-2 left-1/2 -translate-x-1/2
-                  md:bottom-[-1.5rem] md:right-[-1.5rem] md:left-auto md:translate-x-0
+                  bottom-3 left-1/2 -translate-x-1/2
+                  md:bottom-6 md:right-6 md:left-auto md:translate-x-0
                   bg-primary text-primary-foreground
                   rounded-xl px-5 py-3 md:px-6 md:py-4
                   shadow-industrial z-20
