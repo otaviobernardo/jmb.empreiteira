@@ -51,17 +51,9 @@ const Process = () => {
 
         {/* Process Steps */}
         <div className="relative">
-          {/* Connection Line - Desktop */}
-          <div className="hidden lg:block absolute top-24 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
-
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((item, index) => (
               <div key={item.step} className="relative group">
-                {/* Step Number - Background */}
-                <div className="absolute -top-4 -left-2 text-7xl font-heading font-bold text-primary/10 group-hover:text-primary/20 transition-colors select-none pointer-events-none">
-                  {item.step}
-                </div>
-
                 {/* Icon Circle */}
                 <div className="relative z-10 w-16 h-16 bg-primary rounded-xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform">
                   <item.icon className="w-8 h-8 text-primary-foreground" />
@@ -77,7 +69,7 @@ const Process = () => {
 
                 {/* Arrow - Desktop */}
                 {index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-24 -right-4 w-8 h-8 text-primary/50">
+                  <div className="hidden lg:block absolute top-8 -right-4 w-8 h-8 text-primary/50">
                     <svg viewBox="0 0 24 24" fill="currentColor">
                       <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
                     </svg>
