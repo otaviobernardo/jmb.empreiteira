@@ -1,5 +1,5 @@
 import { CheckCircle2 } from "lucide-react";
-import logo from "@/assets/logo-jmb.png";
+import logo from "@/assets/logo-transparente-jmb.png";
 
 const features = [
   "Equipe técnica especializada em fundações industriais",
@@ -34,24 +34,23 @@ const About = () => {
               {/* Experience Badge */}
               <div
                 className="
-                  mt-6 flex justify-center
-                  sm:mt-0
-                  sm:absolute sm:bottom-4 sm:right-4
+                  absolute 
+                  bottom-2 left-1/2 -translate-x-1/2
+                  md:bottom-[-1.5rem] md:right-[-1.5rem] md:left-auto md:translate-x-0
                   bg-primary text-primary-foreground
-                  rounded-xl px-6 py-4
+                  rounded-xl px-5 py-3 md:px-6 md:py-4
                   shadow-industrial z-20
                 "
               >
                 <div className="text-center">
-                  <div className="font-heading text-2xl sm:text-3xl font-bold">
+                  <div className="font-heading text-2xl md:text-3xl font-bold">
                     +35
                   </div>
-                  <div className="text-xs opacity-90 uppercase tracking-wide">
+                  <div className="text-[10px] md:text-xs opacity-90 uppercase tracking-wide">
                     Anos de Experiência
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
 
