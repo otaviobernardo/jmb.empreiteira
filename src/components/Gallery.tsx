@@ -1,22 +1,36 @@
-import { Play, Image as ImageIcon } from "lucide-react";
+import { useState } from "react";
+import { Play, Image as ImageIcon, X } from "lucide-react";
 
 const Gallery = () => {
-  // Gerando a lista de fotos (1 a 16)
-  const photos = Array.from({ length: 16 }, (_, i) => ({
-    type: "image",
-    src: `/foto${(i + 1).toString().padStart(2, '0')}.jpg`, // Gera foto01, foto02...
-    alt: `Trabalho de fundação e piso industrial ${(i + 1)}`
-  }));
+  const [selectedMedia, setSelectedMedia] = useState(null);
 
-  // Gerando a lista de vídeos (1 a 7)
-  const videos = Array.from({ length: 7 }, (_, i) => ({
-    type: "video",
-    src: `/video${(i + 1).toString().padStart(2, '0')}.mp4`, // Gera video01, video02...
-    alt: `Vídeo demonstrativo ${(i + 1)}`
-  }));
-
-  // Une as fotos e os vídeos em uma única galeria
-  const mediaItems = [...photos, ...videos];
+  // Substitua pelos seus arquivos reais em /public/galeria
+  const mediaItems = [
+    { type: "image", src: "/galeria/foto01.jpg", alt: "Projeto 1" },
+    { type: "image", src: "/galeria/foto02.jpg", alt: "Projeto 2" },
+    { type: "image", src: "/galeria/foto03.jpg", alt: "Projeto 3" },
+    { type: "image", src: "/galeria/foto04.jpg", alt: "Projeto 4" },
+    { type: "image", src: "/galeria/foto05.jpg", alt: "Projeto 5" },
+    { type: "image", src: "/galeria/foto06.jpg", alt: "Projeto 6" },
+    { type: "image", src: "/galeria/foto07.jpg", alt: "Projeto 7" },
+    { type: "image", src: "/galeria/foto08.jpg", alt: "Projeto 8" },
+    { type: "image", src: "/galeria/foto09.jpg", alt: "Projeto 9" },
+    { type: "image", src: "/galeria/foto10.jpg", alt: "Projeto 10" },
+    { type: "image", src: "/galeria/foto11.jpg", alt: "Projeto 11" },
+    { type: "image", src: "/galeria/foto12.jpg", alt: "Projeto 12" },
+    { type: "image", src: "/galeria/foto13.jpg", alt: "Projeto 13" },
+    { type: "image", src: "/galeria/foto14.jpg", alt: "Projeto 14" },
+    { type: "image", src: "/galeria/foto15.jpg", alt: "Projeto 15" },
+    { type: "image", src: "/galeria/foto16.jpg", alt: "Projeto 16" },
+    { type: "image", src: "/galeria/foto17.jpg", alt: "Projeto 17" },
+    { type: "video", src: "/galeria/video01.mp4" },
+    { type: "video", src: "/galeria/video02.mp4" },
+    { type: "video", src: "/galeria/video03.mp4" },
+    { type: "video", src: "/galeria/video04.mp4" },
+    { type: "video", src: "/galeria/video05.mp4" },
+    { type: "video", src: "/galeria/video06.mp4" },
+    { type: "video", src: "/galeria/video07.mp4" }
+  ];
 
   return (
     <section id="galeria" className="section-padding bg-secondary/30">
@@ -40,48 +54,73 @@ const Gallery = () => {
           {mediaItems.map((item, index) => (
             <div
               key={index}
-              className="group relative aspect-video bg-black rounded-xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 cursor-pointer"
+              onClick={() => setSelectedMedia(item)}
+              className="group relative aspect-video rounded-xl overflow-hidden cursor-pointer bg-muted"
             >
+              {/* Thumbnail real */}
               {item.type === "image" ? (
                 <img
                   src={item.src}
                   alt={item.alt}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  onError={(e) => {
-                    e.target.src = "https://placehold.co/600x400?text=Foto+Não+Encontrada";
-                  }}
+                  className="absolute inset-0 w-full h-full object-cover"
                 />
               ) : (
-                <div className="relative w-full h-full">
-                  <video
-                    src={item.src}
-                    className="w-full h-full object-cover"
-                    muted
-                    loop
-                    playsInline
-                    onMouseOver={(e) => e.target.play()}
-                    onMouseOut={(e) => {
-                      e.target.pause();
-                      e.target.currentTime = 0;
-                    }}
-                  />
-                  {/* Ícone de Play sobreposto para indicar que é vídeo */}
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-transparent transition-colors">
-                    <Play className="w-12 h-12 text-white opacity-80 group-hover:opacity-0 transition-opacity" />
-                  </div>
-                </div>
+                <video
+                  src={item.src}
+                  muted
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
               )}
 
-              {/* Hover Overlay para as fotos */}
-              {item.type === "image" && (
-                <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                   <ImageIcon className="text-white w-8 h-8" />
-                </div>
-              )}
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                {item.type === "video" ? (
+                  <Play className="w-14 h-14 text-white" />
+                ) : (
+                  <ImageIcon className="w-14 h-14 text-white" />
+                )}
+              </div>
             </div>
           ))}
         </div>
       </div>
+
+      {/* Modal Tela Cheia */}
+      {selectedMedia && (
+        <div
+          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
+          onClick={() => setSelectedMedia(null)}
+        >
+          {/* Botão fechar */}
+          <button
+            className="absolute top-6 right-6 text-white hover:text-primary"
+            onClick={() => setSelectedMedia(null)}
+          >
+            <X className="w-8 h-8" />
+          </button>
+
+          {/* Conteúdo */}
+          <div
+            className="max-w-6xl w-full"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {selectedMedia.type === "image" ? (
+              <img
+                src={selectedMedia.src}
+                alt={selectedMedia.alt}
+                className="w-full h-auto max-h-[90vh] object-contain rounded-xl"
+              />
+            ) : (
+              <video
+                src={selectedMedia.src}
+                controls
+                autoPlay
+                className="w-full max-h-[90vh] rounded-xl"
+              />
+            )}
+          </div>
+        </div>
+      )}
     </section>
   );
 };
