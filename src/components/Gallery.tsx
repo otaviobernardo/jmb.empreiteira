@@ -84,11 +84,6 @@ const Gallery = () => {
           ))}
         </div>
 
-        {/* Note */}
-        <p className="text-center text-sm text-muted-foreground mt-8">
-          💡 Dica: Substitua os placeholders acima pelas fotos e vídeos dos seus
-          serviços
-        </p>
       </div>
     </section>
   );
