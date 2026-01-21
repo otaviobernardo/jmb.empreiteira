@@ -21,8 +21,8 @@ const About = () => {
             <div className="relative bg-secondary/50 rounded-2xl p-12 flex items-center justify-center overflow-hidden">
               
               {/* Decorative Elements */}
-              <div className="absolute -top-4 -left-4 w-24 h-24 bg-primary/10 rounded-xl" />
-              <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-primary/5 rounded-xl" />
+              <div className="hidden md:block absolute -top-4 -left-4 w-24 h-24 bg-primary/10 rounded-xl" />
+              <div className="hidden md:block absolute -bottom-4 -right-4 w-32 h-32 bg-primary/5 rounded-xl" />
 
               {/* Logo */}
               <img
@@ -32,16 +32,25 @@ const About = () => {
               />
 
               {/* Experience Badge */}
-              <div className="absolute bottom-6 right-6 bg-primary text-primary-foreground rounded-xl px-6 py-4 shadow-industrial z-20">
+              <div
+                className="
+                  absolute 
+                  bottom-4 left-1/2 -translate-x-1/2
+                  md:bottom-6 md:right-6 md:left-auto md:translate-x-0
+                  bg-primary text-primary-foreground 
+                  rounded-xl px-4 py-3 md:px-6 md:py-4 
+                  shadow-industrial z-20
+                "
+              >
                 <div className="text-center">
-                  <div className="font-heading text-3xl font-bold">+35</div>
-                  <div className="text-xs opacity-90 uppercase tracking-wide">
+                  <div className="font-heading text-2xl md:text-3xl font-bold">
+                    +35
+                  </div>
+                  <div className="text-[10px] md:text-xs opacity-90 uppercase tracking-wide">
                     Anos de Experiência
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
 
           {/* Content Side */}
           <div className="space-y-8">

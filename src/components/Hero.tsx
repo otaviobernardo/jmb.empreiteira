@@ -6,7 +6,10 @@ const Hero = () => {
   return (
     <section
       id="inicio"
-      className="relative min-h-screen flex items-center justify-center pt-20"
+      className="
+        relative min-h-screen flex items-center justify-center
+        pt-28 md:pt-20
+      "
     >
       {/* Background Image */}
       <div
@@ -19,8 +22,9 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 container-section text-center text-white">
         <div className="max-w-4xl mx-auto space-y-8">
+
           {/* Heading */}
-          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mt-6 md:mt-0">
             Construção de Bases para{" "}
             <span className="text-primary-foreground/90 bg-primary/20 px-2 py-1 rounded">
               Máquinas e Equipamentos
@@ -46,6 +50,7 @@ const Hero = () => {
               Solicite um Orçamento
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
+
             <Button
               variant="outlineLight"
               size="xl"
@@ -59,7 +64,7 @@ const Hero = () => {
           </div>
 
           {/* Trust Indicators */}
-          <div className="pt-12 grid grid-cols-3 gap-6 md:gap-8">
+          <div className="pt-6 md:pt-12 grid grid-cols-3 gap-6 md:gap-8">
             {[
               { number: "+35", label: "Anos de Experiência" },
               { number: "+200", label: "Projetos Executados" },
@@ -69,10 +74,13 @@ const Hero = () => {
                 <div className="font-heading text-3xl md:text-4xl font-bold text-primary-foreground">
                   {stat.number}
                 </div>
-                <div className="text-sm text-white/70 mt-1">{stat.label}</div>
+                <div className="text-xs md:text-sm text-white/70 mt-1">
+                  {stat.label}
+                </div>
               </div>
             ))}
           </div>
+
         </div>
       </div>
     </section>
