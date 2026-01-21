@@ -19,12 +19,6 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 container-section text-center text-white">
         <div className="max-w-4xl mx-auto space-y-8">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-2 text-sm font-medium">
-            <span className="w-2 h-2 bg-whatsapp rounded-full animate-pulse" />
-            Especialistas em Fundações Industriais
-          </div>
-
           {/* Heading */}
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
             Construção de Bases para{" "}
@@ -65,12 +59,11 @@ const Hero = () => {
           </div>
 
           {/* Trust Indicators */}
-          <div className="pt-12 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+          <div className="pt-12 grid grid-cols-3 gap-6 md:gap-8">
             {[
               { number: "+35", label: "Anos de Experiência" },
               { number: "+200", label: "Projetos Executados" },
               { number: "100%", label: "Clientes Satisfeitos" },
-              { number: "24h", label: "Suporte Técnico" },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
                 <div className="font-heading text-3xl md:text-4xl font-bold text-primary-foreground">
