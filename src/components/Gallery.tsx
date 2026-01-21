@@ -1,10 +1,15 @@
 import { useState } from "react";
-import { Play, Image as ImageIcon, X } from "lucide-react";
+import {
+  Play,
+  Image as ImageIcon,
+  X,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 
 const Gallery = () => {
-  const [selectedMedia, setSelectedMedia] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(null);
 
-  // Substitua pelos seus arquivos reais em /public/galeria
   const mediaItems = [
     { type: "image", src: "/galeria/foto01.jpg", alt: "Projeto 1" },
     { type: "image", src: "/galeria/foto02.jpg", alt: "Projeto 2" },
@@ -32,6 +37,22 @@ const Gallery = () => {
     { type: "video", src: "/galeria/video07.mp4" }
   ];
 
+  const openMedia = (index) => setCurrentIndex(index);
+  const closeMedia = () => setCurrentIndex(null);
+
+  const prevMedia = () =>
+    setCurrentIndex((prev) =>
+      prev === 0 ? mediaItems.length - 1 : prev - 1
+    );
+
+  const nextMedia = () =>
+    setCurrentIndex((prev) =>
+      prev === mediaItems.length - 1 ? 0 : prev + 1
+    );
+
+  const selectedMedia =
+    currentIndex !== null ? mediaItems[currentIndex] : null;
+
   return (
     <section id="galeria" className="section-padding bg-secondary/30">
       <div className="container-section">
@@ -40,24 +61,22 @@ const Gallery = () => {
           <span className="inline-block text-primary font-semibold uppercase tracking-wider text-sm mb-4">
             Galeria
           </span>
-          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-foreground mb-6">
+          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl mb-6">
             Nossos <span className="text-primary">Projetos</span>
           </h2>
           <p className="text-muted-foreground text-lg">
-            Confira alguns dos nossos trabalhos realizados em fundações para
-            máquinas e pisos industriais.
+            Confira alguns dos nossos trabalhos realizados.
           </p>
         </div>
 
-        {/* Gallery Grid */}
+        {/* Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {mediaItems.map((item, index) => (
             <div
               key={index}
-              onClick={() => setSelectedMedia(item)}
+              onClick={() => openMedia(index)}
               className="group relative aspect-video rounded-xl overflow-hidden cursor-pointer bg-muted"
             >
-              {/* Thumbnail real */}
               {item.type === "image" ? (
                 <img
                   src={item.src}
@@ -72,7 +91,6 @@ const Gallery = () => {
                 />
               )}
 
-              {/* Overlay */}
               <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
                 {item.type === "video" ? (
                   <Play className="w-14 h-14 text-white" />
@@ -85,30 +103,52 @@ const Gallery = () => {
         </div>
       </div>
 
-      {/* Modal Tela Cheia */}
+      {/* Modal */}
       {selectedMedia && (
         <div
-          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
-          onClick={() => setSelectedMedia(null)}
+          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center"
+          onClick={closeMedia}
         >
-          {/* Botão fechar */}
+          {/* Fechar */}
           <button
-            className="absolute top-6 right-6 text-white hover:text-primary"
-            onClick={() => setSelectedMedia(null)}
+            className="absolute top-6 right-6 text-white hover:text-primary z-50"
+            onClick={closeMedia}
           >
             <X className="w-8 h-8" />
           </button>
 
+          {/* Anterior */}
+          <button
+            className="absolute left-4 md:left-10 text-white hover:text-primary z-50"
+            onClick={(e) => {
+              e.stopPropagation();
+              prevMedia();
+            }}
+          >
+            <ChevronLeft className="w-10 h-10" />
+          </button>
+
+          {/* Próximo */}
+          <button
+            className="absolute right-4 md:right-10 text-white hover:text-primary z-50"
+            onClick={(e) => {
+              e.stopPropagation();
+              nextMedia();
+            }}
+          >
+            <ChevronRight className="w-10 h-10" />
+          </button>
+
           {/* Conteúdo */}
           <div
-            className="max-w-6xl w-full"
+            className="max-w-6xl w-full px-4"
             onClick={(e) => e.stopPropagation()}
           >
             {selectedMedia.type === "image" ? (
               <img
                 src={selectedMedia.src}
                 alt={selectedMedia.alt}
-                className="w-full h-auto max-h-[90vh] object-contain rounded-xl"
+                className="w-full max-h-[90vh] object-contain rounded-xl"
               />
             ) : (
               <video
